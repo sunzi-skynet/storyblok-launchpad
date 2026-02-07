@@ -10,33 +10,31 @@ defineProps({
 <template>
   <NuxtLink
     v-editable="blok"
-    :to="useFormatUrl(blok.link.story?.full_slug || blok.link.cached_url)"
-    :target="blok.link.target"
+    :to="blok.url || '#'"
     :class="[
       'inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center dark:text-white',
       {
         'text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800':
-          blok.style === 'secondary',
+          blok.classes === 'is-secondary',
         'text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:text-white dark:focus:ring-primary-900 rounded-lg':
-          blok.style === 'primary'
+          blok.classes === 'is-primary'
       },
-      blok.class
+      blok.classes
     ]"
   >
     <span
       :class="{
-        'order-1': blok.icon_position === 'right',
-        'order-2': blok.icon_position === 'left'
+        'order-1': blok.iconPosition === 'right',
+        'order-2': blok.iconPosition === 'left'
       }"
     >
-      {{ blok.label }}
+      {{ blok.text }}
     </span>
     <div
       :class="[
-        ,
         {
-          'order-2': blok.icon_position === 'right',
-          'order-1': blok.icon_position === 'left'
+          'order-2': blok.iconPosition === 'right',
+          'order-1': blok.iconPosition === 'left'
         }
       ]"
       v-if="blok.icon && blok.icon.length > 0"
@@ -57,9 +55,9 @@ defineProps({
           class="mx-2"
           :class="{
             'text-gray-900 dark:text-white':
-              blok.style === 'secondary',
+              blok.classes === 'is-secondary',
             'text-white':
-              blok.style === 'primary'
+              blok.classes === 'is-primary'
           }"
           :style="{
             width: (inBlok.icon_width ?? 20) + 'px',
