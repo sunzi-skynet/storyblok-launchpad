@@ -128,7 +128,7 @@ export default defineNuxtConfig({
     }
   },
   basicAuth: {
-    enabled: process.env.NUXT_PUBLIC_AUTH_ENABLED || true,
+    enabled: process.env.NUXT_PUBLIC_AUTH_ENABLED !== 'false',
     users: [
       {
         username: 'sunzinet',
