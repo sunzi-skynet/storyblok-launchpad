@@ -4,7 +4,8 @@ export default function getVersion() {
 
   const isPreview = computed(
     () =>
-      !!route.query._storyblok || window?.location?.ancestorOrigins?.[0]?.includes('app.storyblok.com')
+      !!route.query._storyblok ||
+      (import.meta.client && window.location?.ancestorOrigins?.[0]?.includes('app.storyblok.com'))
   )
   const isDevelopment =
     config.public.NODE_ENV === 'development' || config.public.NODE_ENV.toUpperCase() === 'DEV'
