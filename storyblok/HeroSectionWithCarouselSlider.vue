@@ -58,7 +58,7 @@ watch(
             <div class="mt-4 sm:border-t sm:border-gray-100 sm:mt-8 sm:pt-8 dark:border-gray-700">
               <p
                 class="hidden text-base font-medium text-gray-500 sm:block"
-                v-if="blok.sponsor.length > 0"
+                v-if="blok.sponsor?.length > 0"
               >
                 {{ blok.sponsor_text }}:
               </p>
