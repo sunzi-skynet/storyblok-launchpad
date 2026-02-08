@@ -15,13 +15,13 @@ const { isActiveLink } = useActiveLink()
   <footer class="bg-white dark:bg-gray-900">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
       <div class="md:flex md:justify-between">
-        <div v-if="config.footer_logo" class="mb-6 md:mb-0">
+        <div v-if="config.footer_logo?.filename" class="mb-6 md:mb-0">
           <NuxtLink to="/" class="flex items-center">
             <NuxtImg
               width="60"
               height="60"
-              :src="config.footer_logo.filename"
-              :alt="config.footer_logo.alt"
+              :src="config.footer_logo?.filename"
+              :alt="config.footer_logo?.alt"
               class="mr-3"
             />
           </NuxtLink>

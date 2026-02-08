@@ -54,10 +54,11 @@ const props = defineProps({
             class="rounded-[2.5rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800"
           >
             <NuxtImg
+              v-if="blok.image?.filename"
               class="w-full h-full object-cover"
               provider="storyblok"
-              :src="blok.image.filename"
-              :alt="blok.image.alt"
+              :src="blok.image?.filename"
+              :alt="blok.image?.alt"
               width="272"
               height="572"
             />

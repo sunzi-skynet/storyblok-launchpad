@@ -81,8 +81,8 @@ defineProps({
         v-if="blok.image?.filename"
         provider="storyblok"
         class="object-cover rounded-lg"
-        :src="blok.image.filename"
-        :alt="blok.image.alt"
+        :src="blok.image?.filename"
+        :alt="blok.image?.alt"
         width="256"
         height="518"
       />

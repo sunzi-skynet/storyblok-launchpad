@@ -20,8 +20,8 @@ defineProps({
         class="mb-3"
         width="24"
         height="24"
-        :src="blok.icon.filename"
-        :alt="blok.icon.alt"
+        :src="blok.icon?.filename"
+        :alt="blok.icon?.alt"
       />
       <div class="max-w-screen-md">
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">

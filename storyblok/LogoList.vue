@@ -32,9 +32,10 @@ defineProps({
             :target="inBlok.link?.target"
           >
             <NuxtImg
+              v-if="inBlok.image?.filename"
               provider="storyblok"
-              :src="inBlok.image.filename"
-              :alt="inBlok.image.alt"
+              :src="inBlok.image?.filename"
+              :alt="inBlok.image?.alt"
               width="150"
               height="50"
               class="h-9"
@@ -63,9 +64,10 @@ defineProps({
             :target="inBlok.link?.target"
           >
             <NuxtImg
+              v-if="inBlok.image?.filename"
               provider="storyblok"
-              :src="inBlok.image.filename"
-              :alt="inBlok.image.alt"
+              :src="inBlok.image?.filename"
+              :alt="inBlok.image?.alt"
               width="150"
               height="50"
               class="h-9"

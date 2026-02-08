@@ -65,28 +65,28 @@ const getYouTubeEmbedUrl = (url: string) => {
       </div>
       <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
         <NuxtImg
-          v-if="blok.image.filename"
+          v-if="blok.image?.filename"
           provider="storyblok"
           width="520"
           height="389"
-          :src="blok.image.filename"
-          :alt="blok.image.alt"
+          :src="blok.image?.filename"
+          :alt="blok.image?.alt"
         />
         <iframe
-          v-else-if="blok.video[0]?.video.filename && isYouTubeUrl(blok.video[0].video.filename)"
+          v-else-if="blok.video?.[0]?.video?.filename && isYouTubeUrl(blok.video?.[0]?.video?.filename)"
           class="w-full h-full rounded-lg"
-          :src="getYouTubeEmbedUrl(blok.video[0].video.filename)"
+          :src="getYouTubeEmbedUrl(blok.video?.[0]?.video?.filename)"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         />
         <video
-          v-else-if="blok.video[0]?.video.filename"
+          v-else-if="blok.video?.[0]?.video?.filename"
           class="w-full h-full rounded-lg"
-          :src="blok.video[0].video.filename"
+          :src="blok.video?.[0]?.video?.filename"
           controls
-          :autoplay="blok.video[0].autoplay"
+          :autoplay="blok.video?.[0]?.autoplay"
           loop
         >
           Your browser does not support the video tag.

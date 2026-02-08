@@ -15,8 +15,9 @@ defineProps({
     :class="[blok.margin?.[0]?.vertical, blok.margin?.[0]?.horizontal]"
   >
     <NuxtImg
-      :src="blok.image.filename"
-      :alt="blok.image.alt"
+      v-if="blok.image?.filename"
+      :src="blok.image?.filename"
+      :alt="blok.image?.alt"
       provider="storyblok"
       :width="blok.image_width ?? 100"
       :height="blok.image_height ?? 100"

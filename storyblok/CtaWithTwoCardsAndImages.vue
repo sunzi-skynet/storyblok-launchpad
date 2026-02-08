@@ -31,9 +31,10 @@ defineProps({
           class="p-5 space-y-4 bg-white border border-gray-200 rounded-lg shadow-md lg:p-8 dark:bg-gray-800 dark:border-gray-700"
         >
           <NuxtImg
+            v-if="blok.first_card_image?.filename"
             class="object-cover w-full rounded-lg shadow-lg"
-            :src="blok.first_card_image.filename"
-            :alt="blok.first_card_image.alt"
+            :src="blok.first_card_image?.filename"
+            :alt="blok.first_card_image?.alt"
             width="461"
             height="345"
           />
@@ -78,6 +79,7 @@ defineProps({
           class="p-5 space-y-4 bg-white border border-gray-200 rounded-lg shadow-md lg:p-8 dark:bg-gray-800 dark:border-gray-700"
         >
           <NuxtImg
+            v-if="blok.second_card_image?.filename"
             class="object-cover w-full rounded-lg shadow-lg"
             :src="blok.second_card_image?.filename"
             :alt="blok.second_card_image?.alt"

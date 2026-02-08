@@ -84,10 +84,11 @@ watch(
                   :class="{ block: idx === 0 }"
                 >
                   <NuxtImg
+                    v-if="image?.filename"
                     provider="storyblok"
                     width="592"
                     height="730"
-                    :src="image.filename"
+                    :src="image?.filename"
                     class="absolute rounded-lg block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                     alt=""
                   />

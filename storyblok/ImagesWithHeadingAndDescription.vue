@@ -24,20 +24,22 @@ defineProps({
       </div>
       <div class="grid grid-cols-2 gap-4 mt-8">
         <NuxtImg
+          v-if="blok.first_image?.filename"
           provider="storyblok"
           class="w-full rounded-lg"
           width="284"
           height="394"
-          :src="blok.first_image.filename"
-          :alt="blok.first_image.alt"
+          :src="blok.first_image?.filename"
+          :alt="blok.first_image?.alt"
         />
         <NuxtImg
+          v-if="blok.second_image?.filename"
           provider="storyblok"
           class="mt-4 w-full lg:mt-10 rounded-lg"
           width="284"
           height="394"
-          :src="blok.second_image.filename"
-          :alt="blok.second_image.alt"
+          :src="blok.second_image?.filename"
+          :alt="blok.second_image?.alt"
         />
       </div>
     </div>

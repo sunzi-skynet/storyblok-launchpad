@@ -36,10 +36,11 @@ defineProps({
       </div>
       <div class="hidden absolute top-0 right-0 w-1/3 h-full xl:block">
         <NuxtImg
+          v-if="blok.image?.filename"
           provider="storyblok"
           class="object-cover w-full h-full"
-          :src="blok.image.filename"
-          :alt="blok.image.alt"
+          :src="blok.image?.filename"
+          :alt="blok.image?.alt"
         />
       </div>
     </div>

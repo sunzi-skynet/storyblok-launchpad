@@ -23,6 +23,7 @@ defineProps({
           class="mb-6 lg:mb-8 font-light text-gray-500 dark:text-gray-400 md:text-lg"
         ></div>
         <NuxtImg
+          v-if="blok.qr?.filename"
           :src="blok.qr?.filename"
           width="224"
           height="224"

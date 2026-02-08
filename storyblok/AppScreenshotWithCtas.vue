@@ -31,10 +31,11 @@ defineProps({
         </template>
       </div>
       <NuxtImg
+        v-if="blok.image?.filename"
         class="mx-auto w-full max-w-2xl h-64 rounded-lg sm:h-96"
         provider="storyblok"
-        :src="blok.image.filename"
-        :alt="blok.image.alt"
+        :src="blok.image?.filename"
+        :alt="blok.image?.alt"
         width="992"
         height="715"
       />

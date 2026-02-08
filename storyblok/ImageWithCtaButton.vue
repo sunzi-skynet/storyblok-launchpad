@@ -17,13 +17,13 @@ defineProps({
       class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6"
     >
       <NuxtImg
-        v-if="blok.image.filename"
+        v-if="blok.image?.filename"
         provider="storyblok"
         class="w-full"
         width="584"
         height="420"
-        :src="blok.image.filename"
-        :alt="blok.image.alt"
+        :src="blok.image?.filename"
+        :alt="blok.image?.alt"
       />
       <div
         v-else-if="blok.video"

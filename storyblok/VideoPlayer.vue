@@ -42,18 +42,18 @@ const getYouTubeEmbedUrl = (url: string) => {
 <template>
   <div v-editable="blok" class="w-full h-full">
     <iframe
-      v-if="blok.video.filename && isYouTubeUrl(blok.video.filename)"
+      v-if="blok.video?.filename && isYouTubeUrl(blok.video?.filename)"
       class="w-full h-full rounded-lg"
-      :src="getYouTubeEmbedUrl(blok.video.filename)"
+      :src="getYouTubeEmbedUrl(blok.video?.filename)"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
     />
     <video
-      v-else-if="blok.video.filename"
+      v-else-if="blok.video?.filename"
       class="w-full h-full rounded-lg"
-      :src="blok.video.filename"
+      :src="blok.video?.filename"
       controls
       :autoplay="blok.autoplay"
       loop

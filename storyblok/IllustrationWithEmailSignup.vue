@@ -71,9 +71,10 @@ defineProps({
       </div>
       <div class="hidden lg:mt-0 lg:col-span-5 xl:col-span-4 lg:flex">
         <NuxtImg
+          v-if="blok.image?.filename"
           provider="storyblok"
-          :src="blok.image.filename"
-          :alt="blok.image.alt"
+          :src="blok.image?.filename"
+          :alt="blok.image?.alt"
           width="520"
           height="389"
           class="w-full rounded-lg"

@@ -18,12 +18,12 @@ defineProps({
     >
       <a href="#">
         <NuxtImg
-          v-if="blok.image.filename"
+          v-if="blok.image?.filename"
           width="382"
           height="254"
-          :src="blok.image.filename"
+          :src="blok.image?.filename"
           class="rounded-t-lg"
-          :alt="blok.image.alt"
+          :alt="blok.image?.alt"
         />
       </a>
       <div class="p-5">
@@ -49,11 +49,12 @@ defineProps({
       class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
     >
       <NuxtImg
+        v-if="blok.image?.filename"
         width="382"
         height="254"
         class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-        :src="blok.image.filename"
-        :alt="blok.image.alt"
+        :src="blok.image?.filename"
+        :alt="blok.image?.alt"
       />
       <div class="flex flex-col justify-between p-4 leading-normal">
         <h5

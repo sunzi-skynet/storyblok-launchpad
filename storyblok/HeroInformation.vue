@@ -14,10 +14,11 @@ defineProps({
     :class="[blok.margin?.[0]?.vertical, blok.margin?.[0]?.horizontal]"
   >
     <NuxtImg
+      v-if="blok.icon?.filename"
       class="w-6 h-6 mr-3 text-primary-600 dark:text-white shrink-0"
       provider="storyblok"
-      :src="blok.icon.filename"
-      :alt="blok.icon.alt"
+      :src="blok.icon?.filename"
+      :alt="blok.icon?.alt"
       width="24"
       height="24"
     />

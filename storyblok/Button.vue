@@ -41,12 +41,12 @@ defineProps({
     >
       <template v-for="inBlok in blok.icon" :key="inBlok._uid">
         <NuxtImg
-          v-if="inBlok.icon_file.filename"
+          v-if="inBlok.icon_file?.filename"
           provider="storyblok"
           :width="inBlok.icon_width ?? 20"
           :height="inBlok.icon_height ?? 20"
-          :src="inBlok.icon_file.filename"
-          :alt="inBlok.icon_file.alt"
+          :src="inBlok.icon_file?.filename"
+          :alt="inBlok.icon_file?.alt"
           class="mx-2"
         />
         <div

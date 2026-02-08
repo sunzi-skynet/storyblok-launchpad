@@ -6,8 +6,8 @@ const props = defineProps({
   }
 })
 
-const blogPosts = props.blok.blog.slice(1)
-const firstBlogPost = props.blok.blog[0]
+const blogPosts = props.blok.blog?.slice(1) || []
+const firstBlogPost = props.blok.blog?.[0]
 </script>
 
 <template>
@@ -17,13 +17,14 @@ const firstBlogPost = props.blok.blog[0]
     :class="[blok.margin?.[0]?.vertical, blok.margin?.[0]?.horizontal]"
   >
     <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
-      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-20">
+      <div v-if="firstBlogPost" class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-20">
         <article>
           <NuxtImg
+            v-if="firstBlogPost.image?.filename"
             provider="storyblok"
             class="object-cover w-full rounded-lg"
-            :src="firstBlogPost.image.filename"
-            :alt="firstBlogPost.image.alt"
+            :src="firstBlogPost.image?.filename"
+            :alt="firstBlogPost.image?.alt"
           />
 
           <div class="mt-5 space-y-3">
