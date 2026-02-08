@@ -68,9 +68,10 @@ const firstBlogPost = props.blok.blog?.[0]
               </div>
             </div>
 
-            <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-              {{ firstBlogPost.description }}
-            </p>
+            <div
+              v-html="renderedDescription(firstBlogPost.description)"
+              class="text-base font-normal text-gray-500 dark:text-gray-400"
+            ></div>
 
             <NuxtLink
               :to="useFormatUrl(firstBlogPost.link?.story?.full_slug || firstBlogPost.link?.cached_url)"
